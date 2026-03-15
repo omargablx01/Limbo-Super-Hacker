@@ -71,7 +71,7 @@
 # ! -------------------- Other 
 import ipaddress
 
-def ipv4_pro(check_ip: str) -> str:
+def ipv4(check_ip: str) -> str:
     try:
         ip = ipaddress.IPv4Address(check_ip)
         
@@ -79,20 +79,23 @@ def ipv4_pro(check_ip: str) -> str:
 
         if ip.is_loopback:
             return f"Success: {ip} is a Loopback IP."
-        if ip.is_multicast:
+        elif ip.is_multicast:
             return f"Success: {ip} is a Class D (Multicast)."
-        if first_octet >= 240:
+        elif first_octet >= 240:
             return f"Success: {ip} is a Class E (Experimental)."
-        if 1 <= first_octet <= 126:
-            return f"Success: {ip} is a Class A."
-        if 128 <= first_octet <= 191:
-            return f"Success: {ip} is a Class B."
-        if 192 <= first_octet <= 223:
-            return f"Success: {ip} is a Class C."
+        elif 1 <= first_octet <= 126:
+            return f"Success: {ip} is a Class A ."
+        elif 128 <= first_octet <= 191:
+            return f"Success: {ip} is a Class B ."
+        elif 192 <= first_octet <= 223:
+            return f"Success: {ip} is a Class C ."
             
         return f"IP {ip} is valid but falls outside standard A/B/C classes."
 
     except ValueError:
         return f"Error: '{check_ip}' is not a valid IPv4 address."
-
-print(ipv4_pro(input("Write IP For Check > ")))
+    
+ip = input("Write IP For Check > ")
+result = ipv4(ip)
+print("-"*40)
+print(result)
