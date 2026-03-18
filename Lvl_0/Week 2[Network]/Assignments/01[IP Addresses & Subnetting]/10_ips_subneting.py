@@ -1,3 +1,6 @@
+
+#!/usr/bin/python3
+
 import ipaddress
 
 def two_ipv4_network(ip1, ip2, cidr):
