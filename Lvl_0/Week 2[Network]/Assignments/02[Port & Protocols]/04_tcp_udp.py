@@ -57,3 +57,4 @@ for item in data_list:
         f"{item['status'].center(w_status)}"
     )
     print(color + row)
+    
