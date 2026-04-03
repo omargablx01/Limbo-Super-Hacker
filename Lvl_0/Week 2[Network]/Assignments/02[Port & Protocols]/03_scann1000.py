@@ -1,5 +1,5 @@
 
-# #!/usr/bin/python3
+# # #!/usr/bin/python3
 
 # import socket
 
@@ -158,9 +158,9 @@
 #                 t.join()
 #             threads = []
 
-# scan_port("10.10.11.143",443)
+# scan_port("192.168.1.10",443)
 
-# target = "10.10.11.143"
+# target = "192.168.1.10"
 # fast_scan(target, 1, 500)
 
 # ! -------------------------- Other
